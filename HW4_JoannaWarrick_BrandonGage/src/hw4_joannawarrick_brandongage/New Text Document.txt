@@ -1,0 +1,75 @@
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Scanner;
+
+
+public class Node implements Runnable {
+
+
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+        int id = sc.nextInt();
+        int port = 8000 + id;
+
+        String host = "localhost";
+        String filename = "input" + Integer.toString(id) + ".txt";
+
+        //initialize topology from input<id>.txt
+        int[][] topology = new int[4][4];
+        String line = null;
+
+        try{
+            FileReader fileReader = new FileReader(filename);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            while((line = bufferedReader.readLine()) != null)
+            {
+               //parse line and add to adjacency matrix
+                String[] arr = line.split(" ");
+                
+            }
+        }
+        catch(FileNotFoundException e)
+        {
+            System.out.println("Unable to open file " + filename);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Error reading file " + filename);
+        }
+
+        //lambda function to broadcast
+
+        //lambda function to listen
+
+        //run dijkstra's algorithm on the adjacency matrix to find the shortest path
+        //and generate the forwarding table
+
+        //print forwarding table
+
+
+        int[] neighbors = new int[4];
+
+        //initialize forwarding table to 0's
+        int[][] forwardingTable = new int[4][2];
+
+    }
+
+    //main code - connect to other LS's, broadcast known topology from here
+    public void run()
+    {
+        //generate LS message
+
+        //broadcast to all other nodes
+
+        //when done listening for LS packets (will hear 3), run dijkstras
+        //and generate Forwarding table
+
+        //print forwarding table
+    }
+
+    //function to handle any incoming LS messages
+
+
+}
