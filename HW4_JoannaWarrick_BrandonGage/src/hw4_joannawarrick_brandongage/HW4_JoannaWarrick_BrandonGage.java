@@ -24,7 +24,7 @@ public class HW4_JoannaWarrick_BrandonGage {
         
         Scanner sc = new Scanner(System.in);
         int id = sc.nextInt();
-        int port = 8000 + id;
+        int port = 9000 + id;
         
         System.out.println("Node " + id);
         String host = "localhost";
